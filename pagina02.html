@@ -1,7 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><center>PAGINA 02 HTML BÁSICO</center></title>
+    <title>PAGINA 02 HTML BÁSICO</title>
+    <style>
+        p{
+            color:rgb(59, 0, 114);
+        }
+
+        h1{
+            color: rgb(21, 0, 41);
+        }
+
+        span{
+             color: rgb(21, 0, 41);
+        }
+
+        a{
+            color: brown;
+        }
+
+        a:hover{
+            color: rgb(42, 165, 108);
+            width: 300px;
+        }
+
+        table,tr,td{
+            border-collapse: collapse;
+            border: 1px solid #0f0046;
+        }
+    </style>
 </head>
     <body>
         <div>
@@ -21,7 +48,32 @@
         <p>Este é um paragrafo com <sub>texto subscrito</sub>.</p>
         <p>Este é u, paragrafo com <sup> texto sobresscrito</sup>.</p>
         </div>
-        
+
+        <div>
+        <h2>Tabelas no HTML</h2>
+        <table>
+                <tr>
+                    <td>Item</td>
+                    <td>Descrição</td>
+                    <td>Quantidade</td>
+                    <td>Preço</td>
+                </tr>
+                <tr>
+                    <td>01</td>
+                    <td>Carne</td>
+                    <td>1kg</td>
+                    <td>R$44,00</td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>Ovo</td>
+                    <td>12 uni</td>
+                    <td>R$20,00</td>
+
+                </tr>
+        </table>
+
+        </div>
         <p>Voltar para a pagina anterior: <a href="index.html">Ir para index</a></p>
     </body>
 </html>
