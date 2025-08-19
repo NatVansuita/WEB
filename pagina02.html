@@ -28,6 +28,25 @@
             border-collapse: collapse;
             border: 1px solid #0f0046;
         }
+
+        mark{
+            background-color: blueviolet;
+            color: rgb(27, 0, 53);   
+        }
+
+        img{
+            width: 20xp;
+            border-radius: 100%;
+            border: 2xp solid #0f0046;
+            box-shadow: 0 0 10px #0f0046;
+        }
+
+        image:hover{
+            box-shadow: 0 0 10px blueviolet;
+            border: 2xp solid blueviolet;
+            width: 40xp;
+        }
+
     </style>
 </head>
     <body>
@@ -75,5 +94,41 @@
 
         </div>
         <p>Voltar para a pagina anterior: <a href="index.html">Ir para index</a></p>
+
+        <div>
+            <h2>Imagens no HTML</h2>
+            <img src="imag/images.webp" alt="flor">
+        </div>
+        
+        <div>
+            <h2>Formulario</h2>
+            <label for="nome de usuario">Nome: </label>
+            <input id="nome de usuario" type="text">
+            <placehouder>nome</placehouder>
+            <BR>
+
+            <label for="cor">Cor: </label>
+            <placehouder>cor</placehouder>
+            <input id="cor" type="color"><BR>
+            
+            <label for="Data de nascimento">Data de nascimento: </label>
+            <placehouder>Ex: 19/02/2000</placehouder>
+            <input id="Data de nascimento" type="date"><BR>
+
+            <label for="Email">Email: </label>
+            <placehouder>nome123@gmail.com</placehouder>
+            <input id="Email" type="email"><BR>
+
+            <label for="Endereço">Endereço: </label>
+            <placehouder>Endereço</placehouder>
+            <input id="Endereço" type="text"><BR>
+
+            <label for="Observações">Observações: </label>
+            <placehouder>Fale para nos suas Observações</placehouder>
+            <input id="Observações" type="text"><BR>
+
+            <button>PROXIMA PAGINA</button>
+        </div>
+
     </body>
 </html>
