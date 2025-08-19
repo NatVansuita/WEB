@@ -102,33 +102,38 @@
         
         <div>
             <h2>Formulario</h2>
-            <label for="nome de usuario">Nome: </label>
-            <input id="nome de usuario" type="text">
-            <placehouder>nome</placehouder>
+            <form>
+                <label for="nome de usuario">Nome: </label>
+            <input id="nome de usuario" type="text" placeholder="nome">
             <BR>
 
             <label for="cor">Cor: </label>
-            <placehouder>cor</placehouder>
-            <input id="cor" type="color"><BR>
+            <input id="cor" type="color" placeholder="cor"><BR>
             
             <label for="Data de nascimento">Data de nascimento: </label>
-            <placehouder>Ex: 19/02/2000</placehouder>
-            <input id="Data de nascimento" type="date"><BR>
+            <input id="Data de nascimento" type="date" placeholder="Data de nascimento"><BR>
 
             <label for="Email">Email: </label>
-            <placehouder>nome123@gmail.com</placehouder>
-            <input id="Email" type="email"><BR>
+            <input id="Email" type="email" placeholder="nome123@gmail.com"><BR>
 
             <label for="Endereço">Endereço: </label>
-            <placehouder>Endereço</placehouder>
-            <input id="Endereço" type="text"><BR>
+            <input id="Endereço" type="text" placeholder="Endereço"><BR>
 
             <label for="Observações">Observações: </label>
-            <placehouder>Fale para nos suas Observações</placehouder>
-            <input id="Observações" type="text"><BR>
+            <textarea id="Observações" type="text" placeholder="Fale para nos suas Observações"></textarea><BR>
 
             <button>PROXIMA PAGINA</button>
+            
         </div>
+            </form>
 
+        <div>
+            <form action="https://google.com/search">
+                <h2>BUSCA</h2>
+                <label for="Key">Entre com termo</label>
+                <input type="text" id="Key" name="q">
+                <button>buscar</button>
+            </form>
+        </div>
     </body>
 </html>
