@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 08</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ddd;
+            padding: 20px;
+        }
+
+        .container {
+            display: grid; /* ativa CSS grid */
+            min-height: 500px; /* altura minima */
+            gap: 3px; /* espaço entre os elementos do grid */
+            background-color: #fff;
+            border: 2px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Desktop - tela maior */
+        @media (min-width: 768px) {
+            .container {
+                grid-template-areas:/*aqui ta definindo a area do grid*/
+                    "header header header header"
+                    "left-aside banner banner right-aside"
+                    "left-aside main-content main-content right-aside"
+                    "low-content main-content main-content right-aside"
+                    "footer footer footer footer";
+                grid-template-columns: 100px 1fr 1fr 100px;
+                grid-template-rows: 50px 50px 1fr 50px 50px;
+                max-width: 600px;
+            }
+        }
+
+        /* Mobile - tela menor */
+        @media (max-width: 767px) {
+            .container {
+                grid-template-areas: /* Cada area ocupa uma linha */
+                    "header"
+                    "banner"
+                    "left-aside"
+                    "main-content"
+                    "right-aside"
+                    "low-content"
+                    "footer";
+                grid-template-columns: 1fr;
+                grid-template-rows: 50px 50px 50px 300px 50px 50px 50px;
+                max-width: 300px;
+            }
+        }
+
+        .header {
+            grid-area: header; /* conecta ao grid */
+            background-color: #ffa500;
+            display: flex; /* flexbox para centralizar conteudo */
+            align-items: center; /* centraliza verticalmente */
+            justify-content: center; /* centraliza horizontalmente */
+            font-weight: bold;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .banner {
+            grid-area: banner;
+            background-color: #dc3545;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 14px;
+        }
+
+        .left-aside {
+            grid-area: left-aside;
+            background-color: #28a745;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 12px;
+            writing-mode: vertical-rl;/* texto vertical (desktop) */
+            text-orientation: mixed;
+        }
+
+        .main-content {
+            grid-area: main-content;
+            background-color: #007bff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;/* coloca o texto em coluna */
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .right-aside {
+            grid-area: right-aside;
+            background-color: #ffa500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #333;
+            font-size: 12px;
+            writing-mode: vertical-rl;/* texto vertical (desktop) */
+            text-orientation: mixed;
+        }
+
+        .low-content {
+            grid-area: low-content;
+            background-color: #28a745;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 12px;
+        }
+
+        .footer {
+            grid-area: footer;
+            background-color: #007bff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 14px;
+        }
+
+        .dimensions {
+            font-size: 12px;
+            margin-top: 5px;
+            opacity: 0.8;
+        }
+
+        /* Texto vertical para mobile tbm */
+        @media (max-width: 767px) {
+            .left-aside, .right-aside {
+                writing-mode: horizontal-tb;
+                text-orientation: initial;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <h1>QUESTÃO 08</h1>
+
+    <h3>
+        (1.0) Recrie os layouts abaixo utilizando media screen para definir o layout adequado para o dispositivo..
+    </h3>
+
+    <img src="./layout.png"alt="">
+
+    <p><b>R: </b></p>
+
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="banner">Banner</div>
+        <div class="left-aside">Left Aside</div>
+        <div class="main-content">
+            <div>Main Content</div>
+            <div class="dimensions">Width: 437, Height: 873</div>
+        </div>
+        <div class="right-aside">Right Aside</div>
+        <div class="low-content">Low Content</div>
+        <div class="footer">Footer</div>
+    </div>
+
+</body>
+</html>

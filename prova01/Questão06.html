@@ -8,29 +8,110 @@
     <style>
         body{
             box-sizing: border-box;
-            min-height: 100vh;
+            min-height: 100px;
             background-color: #f0f0f0;
             padding: 20px;
         }
         .container{
-            width: 10%;
-            height: 100px;
-            background-color: #ffffff;
-            position: relative;
-            align-items: center;
+            display: grid;
+            gap: 10px;
+            grid-template-areas:
+                "a b c";
+            grid-template-columns: 1fr 1fr 1fr ;
+            grid-template-rows: 1fr 1fr 1fr;
+          width: 600px;
+          height: 400px;
            
         }
         .itemA{
+            margin-right: 9px;
             grid-area: a;
-            background-color: #ff0000;
-            width: 30%;
-            height: 45%;
-            border-radius: 100%;
+            background-color: #ffffff;
+            display: flex;
             align-items: center;
-            display: center;
-            
+            justify-content: center;
+            border-color: black;
         }
-      
+
+        .circulo{
+            align-items: center;
+            justify-content: center;
+            background-color: #ff0000;
+            border-radius: 50%;
+            margin-right: 9px;
+            width: 50px;
+            height: 50px;
+        }
+
+
+         .container2{
+            display: grid;
+            height: 13vh;
+            grid-template-areas:
+                "a"
+                "b"
+                "c";
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+        .Vermelho{
+            
+            grid-area: a;
+            background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+        }
+        .Branco{
+            
+            grid-area: b;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .Azul{
+            grid-area: c;
+            background-color: blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container3{
+            display: grid;
+            height: 13vh;
+            grid-template-areas:
+                "a b c";
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+        }
+        .Verde{
+            
+            grid-area: a;
+            background-color: green;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+        }
+        .Brancoo{
+            
+            grid-area: b;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .Vermelhoo{
+            grid-area: c;
+            background-color: red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
     </style>
 
 </head>
@@ -51,8 +132,24 @@
     <p><b>R: </b></p>
 
     <div class="container">
-        <div class="itemA"></div>
+        <div class="itemA">
+            <div class="circulo"></div>
+        </div>
+
+        <div class="container2">
+            <div class="Vermelho"></div>
+            <div class="Branco"></div>
+            <div class="Azul"></div>
+        </div>
+
+        <div class="container3">
+            <div class="Verde"></div>
+            <div class="Brancoo"></div>
+            <div class="Vermelhoo"></div>
+        </div>
     </div>
+
+    
 
 </body>
 </html>
