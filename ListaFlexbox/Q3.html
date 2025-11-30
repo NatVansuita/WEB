@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: #aaa;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            padding: 50px;
+        }
+
+        .container {
+            background-color: #fff;
+            width: 300px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .user {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .userPerfil {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .name {
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .address {
+            font-size: 0.85em;
+            color: #777;
+        }
+
+        .voltar {
+            margin-top: 20px;
+            text-align: center;
+            color: purple;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .voltar:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="user ">
+            <img class="avatar" src="https://randomuser.me/api/portraits/women/44.jpg">
+            <div class="userPerfil">
+                <div class="name">Linda Hart</div>
+                <div class="address">2420</div>
+            </div>
+        </div>
+
+        <div class="user">
+            <img class="avatar" src="https://randomuser.me/api/portraits/men/32.jpg">
+            <div class="userPerfil">
+                <div class="name">Roger Medina</div>
+                <div class="address">2420 </div>
+            </div>
+        </div>
+
+        <div class="user">
+            <img class="avatar" src="https://randomuser.me/api/portraits/men/45.jpg">
+            <div class="userPerfil">
+                <div class="name">Dean Sullivan</div>
+                <div class="address">6727 </div>
+            </div>
+        </div>
+
+        <div class="user">
+            <img class="avatar" src="https://randomuser.me/api/portraits/women/68.jpg">
+            <div class="userPerfil">
+                <div class="nome">Elizabeth Austin</div>
+                <div class="address"> 6685 </div>
+            </div>
+        </div>
+
+        <a href="ListaFlexbox.html" class="voltar">Voltar para a pagina anterior</a>
+    </div>
+</body>
+
+</html>

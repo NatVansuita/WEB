@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 80vh;
+            max-width: 800px;
+        }
+
+        .Header {
+            background-color: #a6ce39;
+            padding: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .main {
+            display: flex;
+            flex: 1;
+        }
+
+        .Article {
+            flex: 3;
+            background-color: #f9f9f9;
+            padding: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .Aside {
+            flex: 1;
+            background-color: #fff9e5;
+            padding: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .Nav {
+            flex: 1;
+            background-color: #e4f0e4;
+            padding: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .Footer {
+            background-color: #a6ce39;
+            padding: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="Header">Header</div>
+
+        <div class="main">
+            <div class="Article">Article</div>
+            <div class="Aside">Aside</div>
+            <div class="Nav">Nav</div>
+        </div>
+
+        <div class="Footer">Footer</div>
+
+        <a href="ListaFlexbox.html" class="voltar">Voltar para a página anterior</a>
+        
+    </div>
+</body>
+
+</html>
