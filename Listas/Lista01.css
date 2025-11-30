@@ -1,0 +1,97 @@
+.paragrafo {
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+
+.p1 {
+    font-family: Georgia, serif;
+    color: #2980b9;
+}
+
+.p2 {
+    font-family: Courier New, monospace;
+    color: #27ae60;
+}
+
+.p3 {
+    font-family: Verdana, sans-serif;
+    color: #8e44ad;
+}
+
+.p4 {
+    font-family: "Times New Roman", serif;
+    color: #d35400;
+}
+
+.destaque {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.destaque2 {
+    color: #f39c12;
+    font-style: italic;
+}
+
+.destaque3 {
+    background-color: #ecf0f1;
+    padding: 2px 4px;
+}
+
+.destaque4 {
+    color: #2c3e50;
+    text-decoration: underline;
+}
+
+.div01 {
+    width: 25%;
+    height: 100px;
+    font-size: 2em;
+    text-align: center;
+    line-height: 100px;
+}
+
+.div1 {
+    background-color: purple;
+}
+
+.div2 {
+    background-color: green;
+}
+
+.div3 {
+    background-color: red;
+}
+
+.div4 {
+    background-color: rgb(255, 217, 0);
+
+}
+
+.div02 {
+    width: 150px;
+    height: 100px;
+    font-size: 2em;
+    text-align: center;
+    line-height: 100px;
+    color: white;
+    flex-direction: column-reverse;
+}
+
+.div5 {
+    background: blue;
+}
+
+.div6 {
+    background: green;
+}
+
+.div7 {
+    background: red;
+}
+
+.div8 {
+    background: yellow;
+    color: black;
+}
