@@ -3,23 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="pagina03.css">
-    <title>CSS</title>
+    <link rel="stylesheet" href="pagina3.css">
+    <title>Document</title>
 </head>
 <body>
-    <p>O CSS documento de estilização em cascata criado em 1993, com sua primeira versão amplamente utilizada em 1997.
-         A linguagem CSS permite definir regras que definem caracteristicas para os elementos HTML como cor, borda e comportamentos, além de animações e transições.</p>
-    <p>Ao longo dos anos o css envoluio e hj temos o CSS 1 2 3, cada uma das versões adicionou novos recursos que eram demandados no periodo.</p>
-    <ol type="1" id="lista">
-        <li>CSS 01 1996 - propriedades básicas de estilização e formatação, além de controle do posicionamento dos elementos HTML copm display.</li>
-        <li>CSS 02 1998 - adição de propriedades de animações e transição e melhoria do position.</li>
-        <li>CSS 03 2008 - incremento gradual de novas funcionalidades do CSS com animações e ferramentas de posicionamento como display: flex (2008) e grid (2013)</li>
+
+    <p>O CSS documento de estilzação em cascata criado em 1993, com sua primeira versão amplamente utiçizada em 199. A linguagem CSS permite definir regras que f=efinem caracteristicas para os elemntos HTML como cor, borda e comportamento, além de animações e transições.</p>
+    <p>Ao logo dos anos o css evolui e hoje temos o css 1 2 e 3, cada das versões adicionou novos recursos que eram demandadas no periodo.</p>
+    <ol type="1">
+        <li>CSS 1 1996 - própriedade básicas de estilização e formatação, além de controle do posicionamento dos elemntos html com propriedades float e position</li>
+        <li>CSS 2 2998 - adição de propriedades de animação e transição e melhoria do position</li>
+        <li>CSS 3 2008 - incremnto gradual de novas funcionalidades do CSS  com animação e ferramentas de posicionamento como display:flex (2008) e grid (2013</li>
     </ol>
+    <p class="vermelho">Uma regra css pode ser definida com a seguinte sintaxe</p>
+    <pre>
+    Seletor{
+        propriedade1: Valor;
+        propriedade2: Valor;
+    }
+    </pre>
+    <p id="titulosformacss">Podemos incluir códigos CSS de 3 formas diferentes</p>
 
-    <div>
-        <p>Uma regra CSS pode ser definida com a seguinte sinteaxe</p>
+    <dl>
+        <dt>CSS externo</dt>
+        <dd>Quando definismos as regras CSS a serem utilizados por meio de um arquivo externo. </dd>
+        <dt>CSS incorporado</dt>
+        <dd>Quando definimos as regras CSS por meio da tag &lt;style &gt;</dd>
+        <dt>CSS inline</dt>
+        <dd>Quando definimos código css de estilização no proprio elemnto html como: <span style="color: red">Texto de cor vermelha com css inline</span></dd>
+    </dl>
 
-    </div>
-    <a class="link" href="index.html">Voltar para a pagina anterior</a>
+    <form action="">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome">
+        <input type="submit" value="Enviar">
+    </form>
+
+    <a href="index.html">Voltar para a pagina anterior</a>
+    
 </body>
 </html>

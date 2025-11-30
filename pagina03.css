@@ -1,11 +1,39 @@
+/** uma regra em css tem sintexe geral
+     seletor{
+         propriedade: valor
+}
+         Tipos de Seletor Existentes:
+         -Seletor Universal:  Seleciona todos os elemntos (ex: *)
+         -Seletor de tipo: Seleciona todos os elementos de um determinado tipo(ex: p, h1, div)
+         -Seletor de ID: Seleciona todos os elementos com um determinado ID(ex: #meu-id)
+         -Seletor de Classe:Seleciona todos os elementos com uma deterinada classe(ex: .minha-classe)
+         -Seletor Atributo: Seleciona elemntos com um determinado atributo(ex: [type:"text"]
+         -Seletor:          **/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*border: 1px solid red;*/
+}
+
 p{
-    background-color: azure;
+    background-color: aqua;
 }
-
-#lista{
+#titulosformacss{
+    background-color: blueviolet;
+    font-size: 20pt;
+}
+.vermelho{
+    color: red;
+}
+[for="nome"],[type="submit"] {
+    color:magenta
+}
+p:hover{
+    color: blue;
+    font-size: 22pt;
+}
+[type="submit"]:hover{
     background-color: aquamarine;
-}
-
-.link{
-    color: blueviolet;
+    font-size: 22pt;
 }

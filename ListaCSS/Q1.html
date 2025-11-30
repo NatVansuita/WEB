@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        li {
+            color: red;
+        }
+
+        .churras {
+            color: green;
+        }
+
+        .fruta {
+            color: gray
+        }
+
+        li+li.churras {
+            color: black;
+        }
+
+        .churras[draggable="true"] {
+            color: magenta;
+        }
+
+        #lip1,
+        #lip2,
+        #lip3 {
+            color: blue
+        }
+
+        #lip3.fruta {
+            color: orange
+        }
+
+        li.churras#lip5 {
+            color: purple
+        }
+    </style>
+
+</head>
+
+<body>
+    <ol>
+        <!--item 1-->
+        <li id="lip0">Abacaxi</li>
+        <!--item 2-->
+        <li class="fruta">Melão</li>
+        <!--item 3-->
+        <li id="lip2" class="fruta">Pera</li>
+        <!--item 4-->
+        <li id="lip3" class="fruta">Uva</li>
+        <!--item 5-->
+        <li id="lip4" class="fruta">Maçã</li>
+        <!--item 6-->
+        <li class="churras">Carne</li>
+        <!--item 7-->
+        <li class="churras">Linguiça</li>
+        <!--item 8-->
+        <li id="lip7" class="churras" draggable="true">Pão de alho</li>
+    </ol>
+
+    <a href="listaCSS.html">Voltar para a pagina anterior</a>
+
+</body>
+
+<!--Resposta
+
+item 01 - Não tem classe e nem um atributo e não esta em nenhuma regra - vermelho;
+item 02 - Esse tem uma classe (.fruta) - cinza;
+item 03 - Tem classe, mas tem um ID lip2 é mais forte - azul;
+item 04 - Esse tbm tem uma clase fruta e tem o id3 e a regra 3 - laranja;
+item 05 - Tem a classe fruta, mas sem um id - cinza;
+item 06 - Tem a classe .churras - verde;
+item 07 - É um li.churras e logo tem mais um li - preto;
+item 08 - Tem a classe .churras e tem um atributo - magenta;
+
+-->
+
+</html>

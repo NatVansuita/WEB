@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- === 4a-display.html === -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            height: 100px;
+            font-size: 30px;
+            text-align: center;
+            color: white;
+        }
+
+        #d1 {
+            background: blue;
+        }
+
+        #d2 {
+            background: green;
+        }
+
+        #d3 {
+            background: red;
+        }
+
+        #d4 {
+            background: yellow;
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="d1">1</div>
+    <div id="d2">2</div>
+    <div id="d3">3</div>
+    <div id="d4">4</div>
+
+    <!--explicaçao: as divs tem o padrao em display block com a largura de 100% e um fica embaixo do outro-->
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<!-- === 4b-display.html === -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>4b-display</title>
+    <style>
+        div {
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            font-size: 30px;
+            text-align: center;
+            color: white;
+        }
+
+        #d1 {
+            background: blue;
+        }
+
+        #d2 {
+            background: green;
+        }
+
+        #d3 {
+            background: red;
+        }
+
+        #d4 {
+            background: yellow;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">1</div>
+    <div id="d2">2</div>
+    <div id="d3">3</div>
+    <div id="d4">4</div>
+
+    <!--aqui tem o display:inline-block e isso nao ocupam a toda a largura e fica uma do lado da outra-->
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<!-- === 4c-display.html === -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>4c-display</title>
+    <style>
+        body {
+            position: relative;
+            height: 100vh;
+            margin: 0;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            font-size: 20px;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+            position: absolute;
+        }
+
+        #d1 {
+            background: red;
+            top: 0;
+            left: 0;
+        }
+
+        #d2 {
+            background: yellow;
+            color: black;
+            top: 0;
+            right: 0;
+        }
+
+        #d3 {
+            background: magenta;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #d4 {
+            background: blue;
+            bottom: 0;
+            left: 0;
+        }
+
+        #d5 {
+            background: green;
+            bottom: 0;
+            right: 0;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div id="d1">box1</div>
+    <div id="d2">box2</div>
+    <div id="d3">box3</div>
+    <div id="d4">box4</div>
+    <div id="d5">box5</div>
+
+    <a href="listaCSS.html">Voltar para a pagina anterior</a>
+
+    <!--aqui cada div tem sua direcao, para centralizar usei o top e o left-->
+</body>
+</html>

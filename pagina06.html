@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Código Js
+        //alert("Olá meus amores")
+        var i=0
+        console.log(i)
+        console.log( typeof(i))
+       
+        i="Maico"
+        console.log(i)
+        console.log( typeof(i))
+        i=8.79
+        console.log(i)
+        console.log( typeof(i))
+        document.body.style.backgroundColor='gray'
+        let titulo = document.createElement("h1")
+        document.body.appendChild(titulo)
+        titulo.innerText = "Um brinde senhoras e senhores"
+        let butao = document.createElement("button")
+        let paragrafo = document.createElement("p")
+        document.body.appendChild(butao)
+        butao.innerText = "Clique em mim"
+        butao.id = "btn"
+        let body = document.body
+        paragrafo.innerText = "Clique no botão"
+        paragrafo.id ="praf"
+        document.body.appendChild(paragrafo)
+        butao.style.width = "30vh"
+        butao.style.height = "5vh"
+        butao.style.borderRadius = "1rem"
+        document.body.style.height = "100vh"
+        document.body.style.display = "flex"
+        body.style.flexDirection = "column"
+        body.style.justifyContent = "center"
+        body.style.alignItems = "center"
+
+        butao.addEventListener("click",()=>{
+            p.innerText = "bla"
+        })
+        
+    </script>
+
+    <a href="index.html">Voltar para a pagina anterior</a>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="tituloA">Texto</h1>
+    <h1 id="tituloB">Texto</h1>
+    <h1 id="tituloC">Texto</h1>
+    <script>
+
+        let tituloA = document.querySelector("#tituloA")
+        let tituloB = document.getElementById("tituloB")
+        let titulos = document.querySelectorAll("h1")
+
+        function potencia(base, exp) {
+            return Math.pow(base, exp);
+        }
+
+        tituloA.style.color = "blue"
+        tituloB.innerText = "Alguém como eu jamais nasceu!"
+
+        titulos.forEach((e, i) => {
+            e.innerText += "-" + potencia(i, 3);
+        })
+
+
+    </script>
+
+    <a href="index.html">Voltar para a pagina anterior</a>
+
+</body>
+
+</html>
