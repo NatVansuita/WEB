@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - Cafeteria</title>
+    <title>Login - Cafeteria</title>
     <style>
         * {
             margin: 0;
@@ -29,6 +29,14 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             width: 100%;
             max-width: 400px;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: #D4AF37;
+            border-radius: 50%;
+            margin: 0 auto 20px;
         }
 
         h1 {
@@ -68,82 +76,63 @@
             border-color: #D4AF37;
         }
 
-        .buttons {
-            display: flex;
-            gap: 10px;
-        }
-
-        button, .btn {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: bold;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-        }
-
         button {
+            width: 100%;
+            padding: 12px;
             background: #D4AF37;
             color: #3E2723;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
         }
 
         button:hover {
             background: #C5A028;
         }
 
-        .btn {
-            background: #8D6E63;
-            color: white;
+        .link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #666;
         }
 
-        .btn:hover {
-            background: #6D4C41;
+        .link a {
+            color: #D4AF37;
+            text-decoration: none;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Cadastro</h1>
+        <div class="logo"></div>
+        <h1>Sol Dourado</h1>
 
         <?php
         if (isset($_GET['error'])) {
             echo '<div class="error">';
-            switch ($_GET['error']) {
-                case 'faltando_dados': echo 'Preencha todos os campos!'; break;
-                case 'nome_invalido': echo 'Nome deve ter 10-50 caracteres.'; break;
-                case 'email_invalido': echo 'Email deve ter no mínimo 15 caracteres.'; break;
-                case 'senha_invalido': echo 'Senha deve ter 1-5 caracteres.'; break;
-                case 'telefone_invalido': echo 'Telefone deve ter 10 dígitos.'; break;
-                case 'data_invalido': echo 'Data de nascimento inválida.'; break;
-            }
+            if ($_GET['error'] == 'faltando_dados') echo 'Preencha todos os campos!';
+            if ($_GET['error'] == 'Dados_incorretos') echo 'Email ou senha incorretos!';
             echo '</div>';
         }
         ?>
 
-        <form action="CadastroProcesso.php" method="POST">
-            <label>Nome Completo:</label>
-            <input type="text" name="nome" value="<?php echo isset($_GET['nome']) ? htmlspecialchars($_GET['nome']) : ''; ?>">
-
+        <form action="LoginProcesso.php" method="POST">
             <label>Email:</label>
             <input type="text" name="email" value="<?php echo isset($_GET['email']) ? htmlspecialchars($_GET['email']) : ''; ?>">
 
             <label>Senha:</label>
-            <input type="password" name="senha" value="<?php echo isset($_GET['senha']) ? htmlspecialchars($_GET['senha']) : ''; ?>">
+            <input type="password" name="senha">
 
-            <label>Telefone:</label>
-            <input type="text" name="telefone" value="<?php echo isset($_GET['telefone']) ? htmlspecialchars($_GET['telefone']) : ''; ?>">
-
-            <label>Data de Nascimento:</label>
-            <input type="date" name="dataNascimento" value="<?php echo isset($_GET['dataNascimento']) ? htmlspecialchars($_GET['dataNascimento']) : ''; ?>">
-
-            <div class="buttons">
-                <a href="Login.php" class="btn">Voltar</a>
-                <button type="submit">Cadastrar</button>
-            </div>
+            <button type="submit">Entrar</button>
         </form>
+
+        <div class="link">
+            Não tem conta? <a href="Cadastro.php">Cadastre-se</a>
+        </div>
     </div>
 </body>
 </html>
