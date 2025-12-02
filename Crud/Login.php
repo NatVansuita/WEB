@@ -15,28 +15,16 @@
         body {
             font-family: Arial, sans-serif;
             background: #5D4037;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             padding: 20px;
         }
 
         .container {
             background: white;
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             width: 100%;
             max-width: 400px;
-        }
-
-        .logo {
-            width: 50px;
-            height: 50px;
-            background: #D4AF37;
-            border-radius: 50%;
-            margin: 0 auto 20px;
+            margin: 50px auto;
+            border: 1px solid #333;
         }
 
         h1 {
@@ -50,9 +38,8 @@
             background: #ffebee;
             color: #c62828;
             padding: 10px;
-            border-radius: 4px;
             margin-bottom: 15px;
-            font-size: 14px;
+            border: 1px solid #c62828;
         }
 
         label {
@@ -64,32 +51,21 @@
 
         input {
             width: 100%;
-            padding: 10px;
+            padding: 8px;
             margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            border: 1px solid #999;
             font-size: 14px;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: #D4AF37;
         }
 
         button {
             width: 100%;
-            padding: 12px;
+            padding: 10px;
             background: #D4AF37;
             color: #3E2723;
             border: none;
-            border-radius: 4px;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
-        }
-
-        button:hover {
-            background: #C5A028;
         }
 
         .link {
@@ -108,13 +84,12 @@
 </head>
 <body>
     <div class="container">
-        <div class="logo"></div>
         <h1>Sol Dourado</h1>
 
         <?php
-        if (isset($_GET['error'])) {
-            echo '<div class="error">';
-            if ($_GET['error'] == 'faltando_dados') echo 'Preencha todos os campos!';
+        if (isset($_GET['error'])) {  //faz a verificação se falta dados ou erro de informações de loguin
+            echo '<div class="error">'; //cria a mensagem correspondente do erro
+            if ($_GET['error'] == 'faltando_dados') echo 'Preencha todos os campos!'; 
             if ($_GET['error'] == 'Dados_incorretos') echo 'Email ou senha incorretos!';
             echo '</div>';
         }

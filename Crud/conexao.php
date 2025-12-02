@@ -1,12 +1,14 @@
 <?php
+//conexao com o banco
 function connecta_bd(){
+    //define as credenciais do banco
     $servername = "localhost"; 
-    $port = 3306;
     $username = "root";
     $password = "Glsarah25!";
     $dbname = "cafe_crud";
 
-    return new PDO("mysql:host=$servername;port=$port;dbname=$dbname;charset=utf8", $username, $password, [
+    //tratamento de erro
+    return new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $username, $password, [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     ]);
 }
@@ -16,6 +18,8 @@ function cadastra_usuario($email, $nome, $senha, $telefone, $dataNascimento){
     $con = connecta_bd();
     $stmt = $con->prepare("INSERT INTO usuarios (email, nome, senha, telefone, dataNascimento)
                            VALUES (:email, :nome, :senha, :telefone, :dataNascimento)");
+
+    //Associação do valores com a variaveis
     $stmt->bindParam(':email', $email);
     $stmt->bindParam(':nome', $nome);
     $stmt->bindParam(':senha', $senha);
@@ -33,6 +37,7 @@ function cadastra_usuario($email, $nome, $senha, $telefone, $dataNascimento){
     }
 }
 
+//seleciona todos os usuarios
 function select_usuarios(){
     $con = connecta_bd();
     $stmt = $con->prepare("SELECT * FROM usuarios");
@@ -59,6 +64,7 @@ function cadastra_produto($nome, $categoria, $preco, $descricao, $estoque){
     }
 }
 
+//deleta um produto com um id 
 function delete_produto($id){
     $con = connecta_bd();
     $stmt = $con->prepare("DELETE FROM produtos WHERE id = :id");
@@ -66,6 +72,7 @@ function delete_produto($id){
     return $stmt->execute();
 }
 
+//atualiza um produto com um id
 function update_produto($id, $nome, $categoria, $preco, $descricao, $estoque){
     $con = connecta_bd();
     $stmt = $con->prepare("UPDATE produtos
@@ -81,6 +88,7 @@ function update_produto($id, $nome, $categoria, $preco, $descricao, $estoque){
     return $stmt->execute();
 }
 
+//seleciona um produto 
 function select_produto($id){
     $con = connecta_bd();
     $stmt = $con->prepare("SELECT * FROM produtos WHERE id = :id");
@@ -89,6 +97,7 @@ function select_produto($id){
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
+//seleciona todos os usuarios
 function select_produtos(){
     $con = connecta_bd();
     $stmt = $con->prepare("SELECT * FROM produtos ORDER BY categoria, nome");

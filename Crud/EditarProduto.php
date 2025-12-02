@@ -32,8 +32,7 @@ if (!$produto) {
             margin: 0 auto;
             background: white;
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
         }
 
         h1 {
@@ -45,9 +44,8 @@ if (!$produto) {
             background: #ffebee;
             color: #c62828;
             padding: 10px;
-            border-radius: 4px;
             margin-bottom: 15px;
-            font-size: 14px;
+            border: 1px solid #c62828;
         }
 
         label {
@@ -60,28 +58,15 @@ if (!$produto) {
 
         input, select, textarea {
             width: 100%;
-            padding: 10px;
+            padding: 8px;
             margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            border: 1px solid #999;
             font-size: 14px;
             font-family: Arial, sans-serif;
         }
 
         textarea {
-            resize: vertical;
             min-height: 80px;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: #D4AF37;
-        }
-
-        .row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
         }
 
         .buttons {
@@ -92,9 +77,8 @@ if (!$produto) {
 
         button, .btn {
             flex: 1;
-            padding: 12px;
+            padding: 10px;
             border: none;
-            border-radius: 4px;
             font-size: 14px;
             font-weight: bold;
             cursor: pointer;
@@ -107,23 +91,9 @@ if (!$produto) {
             color: #3E2723;
         }
 
-        button:hover {
-            background: #C5A028;
-        }
-
         .btn {
             background: #8D6E63;
             color: white;
-        }
-
-        .btn:hover {
-            background: #6D4C41;
-        }
-
-        @media (max-width: 768px) {
-            .row {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
@@ -132,7 +102,7 @@ if (!$produto) {
         <h1>Editar Produto</h1>
 
         <?php
-        if (isset($_GET['error'])) {
+        if (isset($_GET['error'])) { // da a mensagen de erro coso algo de errado
             echo '<div class="error">';
             switch ($_GET['error']) {
                 case 'faltando_dados': echo 'Preencha todos os campos obrigatórios!'; break;
@@ -150,24 +120,19 @@ if (!$produto) {
             <label>Nome do Produto:</label>
             <input type="text" name="nome" value="<?php echo htmlspecialchars($produto['nome']); ?>">
 
-            <div class="row">
-                <div>
-                    <label>Categoria:</label>
-                    <select name="categoria">
-                        <option value="">Selecione...</option>
-                        <option value="Cafés" <?php echo ($produto['categoria'] == 'Cafés') ? 'selected' : ''; ?>>Cafés</option>
-                        <option value="Bebidas Quentes" <?php echo ($produto['categoria'] == 'Bebidas Quentes') ? 'selected' : ''; ?>>Bebidas Quentes</option>
-                        <option value="Bebidas Frias" <?php echo ($produto['categoria'] == 'Bebidas Frias') ? 'selected' : ''; ?>>Bebidas Frias</option>
-                        <option value="Doces" <?php echo ($produto['categoria'] == 'Doces') ? 'selected' : ''; ?>>Doces</option>
-                        <option value="Salgados" <?php echo ($produto['categoria'] == 'Salgados') ? 'selected' : ''; ?>>Salgados</option>
-                        <option value="Sobremesas" <?php echo ($produto['categoria'] == 'Sobremesas') ? 'selected' : ''; ?>>Sobremesas</option>
-                    </select>
-                </div>
-                <div>
-                    <label>Preço (R$):</label>
-                    <input type="number" name="preco" step="0.01" value="<?php echo htmlspecialchars($produto['preco']); ?>">
-                </div>
-            </div>
+            <label>Categoria:</label>
+            <select name="categoria">
+                <option value="">Selecione...</option>
+                <option value="Cafés" <?php echo ($produto['categoria'] == 'Cafés') ? 'selected' : ''; ?>>Cafés</option>
+                <option value="Bebidas Quentes" <?php echo ($produto['categoria'] == 'Bebidas Quentes') ? 'selected' : ''; ?>>Bebidas Quentes</option>
+                <option value="Bebidas Frias" <?php echo ($produto['categoria'] == 'Bebidas Frias') ? 'selected' : ''; ?>>Bebidas Frias</option>
+                <option value="Doces" <?php echo ($produto['categoria'] == 'Doces') ? 'selected' : ''; ?>>Doces</option>
+                <option value="Salgados" <?php echo ($produto['categoria'] == 'Salgados') ? 'selected' : ''; ?>>Salgados</option>
+                <option value="Sobremesas" <?php echo ($produto['categoria'] == 'Sobremesas') ? 'selected' : ''; ?>>Sobremesas</option>
+            </select>
+
+            <label>Preço (R$):</label>
+            <input type="number" name="preco" step="0.01" value="<?php echo htmlspecialchars($produto['preco']); ?>">
 
             <label>Descrição:</label>
             <textarea name="descricao"><?php echo htmlspecialchars($produto['descricao']); ?></textarea>

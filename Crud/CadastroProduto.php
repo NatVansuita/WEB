@@ -23,8 +23,7 @@
             margin: 0 auto;
             background: white;
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
         }
 
         h1 {
@@ -36,9 +35,8 @@
             background: #ffebee;
             color: #c62828;
             padding: 10px;
-            border-radius: 4px;
             margin-bottom: 15px;
-            font-size: 14px;
+            border: 1px solid #c62828;
         }
 
         label {
@@ -51,28 +49,15 @@
 
         input, select, textarea {
             width: 100%;
-            padding: 10px;
+            padding: 8px;
             margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            border: 1px solid #999;
             font-size: 14px;
             font-family: Arial, sans-serif;
         }
 
         textarea {
-            resize: vertical;
             min-height: 80px;
-        }
-
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: #D4AF37;
-        }
-
-        .row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
         }
 
         .buttons {
@@ -83,9 +68,8 @@
 
         button, .btn {
             flex: 1;
-            padding: 12px;
+            padding: 10px;
             border: none;
-            border-radius: 4px;
             font-size: 14px;
             font-weight: bold;
             cursor: pointer;
@@ -98,23 +82,9 @@
             color: #3E2723;
         }
 
-        button:hover {
-            background: #C5A028;
-        }
-
         .btn {
             background: #8D6E63;
             color: white;
-        }
-
-        .btn:hover {
-            background: #6D4C41;
-        }
-
-        @media (max-width: 768px) {
-            .row {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
@@ -139,24 +109,19 @@
             <label>Nome do Produto:</label>
             <input type="text" name="nome" value="<?php echo isset($_GET['nome']) ? htmlspecialchars($_GET['nome']) : ''; ?>">
 
-            <div class="row">
-                <div>
-                    <label>Categoria:</label>
-                    <select name="categoria">
-                        <option value="">Selecione...</option>
-                        <option value="Cafés">Cafés</option>
-                        <option value="Bebidas Quentes">Bebidas Quentes</option>
-                        <option value="Bebidas Frias">Bebidas Frias</option>
-                        <option value="Doces">Doces</option>
-                        <option value="Salgados">Salgados</option>
-                        <option value="Sobremesas">Sobremesas</option>
-                    </select>
-                </div>
-                <div>
-                    <label>Preço (R$):</label>
-                    <input type="number" name="preco" step="0.01" value="<?php echo isset($_GET['preco']) ? htmlspecialchars($_GET['preco']) : ''; ?>">
-                </div>
-            </div>
+            <label>Categoria:</label>
+            <select name="categoria">
+                <option value="">Selecione...</option>
+                <option value="Cafés">Cafés</option>
+                <option value="Bebidas Quentes">Bebidas Quentes</option>
+                <option value="Bebidas Frias">Bebidas Frias</option>
+                <option value="Doces">Doces</option>
+                <option value="Salgados">Salgados</option>
+                <option value="Sobremesas">Sobremesas</option>
+            </select>
+
+            <label>Preço (R$):</label>
+            <input type="number" name="preco" step="0.01" value="<?php echo isset($_GET['preco']) ? htmlspecialchars($_GET['preco']) : ''; ?>">
 
             <label>Descrição:</label>
             <textarea name="descricao"><?php echo isset($_GET['descricao']) ? htmlspecialchars($_GET['descricao']) : ''; ?></textarea>

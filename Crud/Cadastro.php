@@ -15,20 +15,16 @@
         body {
             font-family: Arial, sans-serif;
             background: #5D4037;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             padding: 20px;
         }
 
         .container {
             background: white;
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
             width: 100%;
             max-width: 400px;
+            margin: 20px auto;
+            border: 1px solid #333;
         }
 
         h1 {
@@ -42,9 +38,8 @@
             background: #ffebee;
             color: #c62828;
             padding: 10px;
-            border-radius: 4px;
             margin-bottom: 15px;
-            font-size: 14px;
+            border: 1px solid #c62828;
         }
 
         label {
@@ -56,16 +51,10 @@
 
         input {
             width: 100%;
-            padding: 10px;
+            padding: 8px;
             margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            border: 1px solid #999;
             font-size: 14px;
-        }
-
-        input:focus {
-            outline: none;
-            border-color: #D4AF37;
         }
 
         .buttons {
@@ -75,9 +64,8 @@
 
         button, .btn {
             flex: 1;
-            padding: 12px;
+            padding: 10px;
             border: none;
-            border-radius: 4px;
             font-size: 14px;
             font-weight: bold;
             cursor: pointer;
@@ -90,17 +78,9 @@
             color: #3E2723;
         }
 
-        button:hover {
-            background: #C5A028;
-        }
-
         .btn {
             background: #8D6E63;
             color: white;
-        }
-
-        .btn:hover {
-            background: #6D4C41;
         }
     </style>
 </head>
@@ -109,7 +89,7 @@
         <h1>Cadastro</h1>
 
         <?php
-        if (isset($_GET['error'])) {
+        if (isset($_GET['error'])) { //cria as mensagens de erros caso tenha
             echo '<div class="error">';
             switch ($_GET['error']) {
                 case 'faltando_dados': echo 'Preencha todos os campos!'; break;

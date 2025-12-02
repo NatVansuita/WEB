@@ -1,12 +1,13 @@
 <?php 
 session_start();
 
+//verifica se tem campo sem nd, os dados são preservados
 if(empty($_POST['nome']) || empty($_POST['email']) || empty($_POST['senha']) || empty($_POST['telefone']) || empty($_POST['dataNascimento'])){
     header("Location: Cadastro.php?error=faltando_dados&nome=".$_POST['nome']."&email=".$_POST['email']."&senha=".$_POST['senha']."&telefone=".$_POST['telefone']."&dataNascimento=".$_POST['dataNascimento']);
     exit;
 }
 
-if (strlen($_POST['nome']) < 10 || strlen($_POST['nome']) > 50){
+if (strlen($_POST['nome']) < 10 || strlen($_POST['nome']) > 50){ 
     header("Location: Cadastro.php?error=nome_invalido&nome=".$_POST['nome']."&email=".$_POST['email']."&senha=".$_POST['senha']."&telefone=".$_POST['telefone']."&dataNascimento=".$_POST['dataNascimento']);
     exit;
 }

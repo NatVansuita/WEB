@@ -24,64 +24,49 @@ $produtos = select_produtos();
 
         .header {
             background: white;
-            padding: 20px;
-            border-radius: 8px;
+            padding: 15px;
             margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
         }
 
         h1 {
             color: #3E2723;
-            font-size: 24px;
+            font-size: 20px;
+            display: inline-block;
         }
 
         .btn {
-            padding: 10px 20px;
+            float: right;
+            padding: 8px 15px;
             background: #D4AF37;
             color: #3E2723;
             text-decoration: none;
-            border-radius: 4px;
             font-weight: bold;
             font-size: 14px;
-        }
-
-        .btn:hover {
-            background: #C5A028;
         }
 
         table {
             width: 100%;
             background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-collapse: collapse;
+            border: 1px solid #ddd;
         }
 
         th, td {
-            padding: 12px;
+            padding: 10px;
             text-align: left;
-            border-bottom: 1px solid #ddd;
+            border: 1px solid #ddd;
         }
 
         th {
             background: #5D4037;
             color: white;
-            font-weight: bold;
-        }
-
-        tr:hover {
-            background: #f9f9f9;
         }
 
         .categoria {
-            display: inline-block;
-            padding: 4px 8px;
             background: #D4AF37;
             color: #3E2723;
-            border-radius: 3px;
+            padding: 3px 8px;
             font-size: 12px;
             font-weight: bold;
         }
@@ -93,24 +78,13 @@ $produtos = select_produtos();
 
         .estoque-baixo {
             color: #c62828;
-            font-weight: bold;
-        }
-
-        .estoque-ok {
-            color: #2e7d32;
-        }
-
-        .acoes {
-            display: flex;
-            gap: 10px;
         }
 
         .acoes a {
-            padding: 6px 12px;
+            padding: 5px 10px;
             text-decoration: none;
-            border-radius: 4px;
             font-size: 13px;
-            font-weight: bold;
+            margin-right: 5px;
         }
 
         .editar {
@@ -123,81 +97,51 @@ $produtos = select_produtos();
             color: white;
         }
 
-        .editar:hover {
-            background: #6D4C41;
-        }
-
-        .excluir:hover {
-            background: #b71c1c;
-        }
-
         .empty {
             text-align: center;
-            padding: 60px;
+            padding: 40px;
             background: white;
-            border-radius: 8px;
-            color: #666;
-        }
-
-        @media (max-width: 768px) {
-            table {
-                font-size: 12px;
-            }
-            
-            th, td {
-                padding: 8px;
-            }
-
-            .header {
-                flex-direction: column;
-                gap: 15px;
-            }
+            border: 1px solid #ddd;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>☕ Produtos da Cafeteria</h1>
-        <a href="CadastroProduto.php" class="btn">+ Novo Produto</a>
+        <h1>Produtos</h1>
+        <a href="CadastroProduto.php" class="btn">+ Novo</a>
+        <div style="clear: both;"></div>
     </div>
 
     <?php if (empty($produtos)): ?>
         <div class="empty">
-            <h2>Nenhum produto cadastrado</h2>
-            <p>Clique em "Novo Produto" para começar</p>
+            <p>Nenhum produto cadastrado</p>
         </div>
     <?php else: ?>
         <table>
-            <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+                <th>Descrição</th>
+                <th>Ações</th>
+            </tr>
+            <?php foreach ($produtos as $p): ?>
                 <tr>
-                    <th>Nome</th>
-                    <th>Categoria</th>
-                    <th>Preço</th>
-                    <th>Estoque</th>
-                    <th>Descrição</th>
-                    <th>Ações</th>
+                    <td><?php echo htmlspecialchars($p['nome']); ?></td>
+                    <td><span class="categoria"><?php echo htmlspecialchars($p['categoria']); ?></span></td>
+                    <td class="preco">R$ <?php echo number_format($p['preco'], 2, ',', '.'); ?></td>
+                    <td class="<?php echo $p['estoque'] <= 10 ? 'estoque-baixo' : ''; ?>">
+                        <?php echo $p['estoque']; ?>
+                    </td>
+                    <td><?php echo htmlspecialchars($p['descricao']); ?></td>
+                    <td class="acoes">
+                        <a href="EditarProduto.php?id=<?php echo $p['id']; ?>" class="editar">Editar</a>
+                        <a href="ExcluirProduto.php?id=<?php echo $p['id']; ?>" class="excluir" 
+                           onclick="return confirm('Excluir?')">Excluir</a>
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($produtos as $p): ?>
-                    <tr>
-                        <td><?php echo htmlspecialchars($p['nome']); ?></td>
-                        <td><span class="categoria"><?php echo htmlspecialchars($p['categoria']); ?></span></td>
-                        <td class="preco">R$ <?php echo number_format($p['preco'], 2, ',', '.'); ?></td>
-                        <td class="<?php echo $p['estoque'] <= 10 ? 'estoque-baixo' : 'estoque-ok'; ?>">
-                            <?php echo $p['estoque']; ?> un.
-                        </td>
-                        <td><?php echo htmlspecialchars($p['descricao']); ?></td>
-                        <td>
-                            <div class="acoes">
-                                <a href="EditarProduto.php?id=<?php echo $p['id']; ?>" class="editar">Editar</a>
-                                <a href="ExcluirProduto.php?id=<?php echo $p['id']; ?>" class="excluir" 
-                                   onclick="return confirm('Excluir este produto?')">Excluir</a>
-                            </div>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
+            <?php endforeach; ?>
         </table>
     <?php endif; ?>
 </body>
